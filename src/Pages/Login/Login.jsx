@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../Contexts/UserContext/UserContext";
 
 const Login = () => {
-  const { emailLogIn } = useContext(AuthContext);
+  const { emailLogIn, githubSignIn } = useContext(AuthContext);
 
   const handleEmailSignIn = (e) => {
     e.preventDefault();
@@ -57,6 +57,9 @@ const Login = () => {
               <button className="btn btn-primary">Login</button>
             </div>
           </form>
+          <button className="btn btn-primary" onClick={githubSignIn}>
+            Github Sign In
+          </button>
         </div>
       </div>
     </div>
