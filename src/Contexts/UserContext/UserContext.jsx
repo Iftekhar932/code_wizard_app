@@ -25,6 +25,7 @@ export const AuthContext = createContext();
 
 const UserContext = ({ children }) => {
   const [user, setUser] = useState(null);
+  // const [theme,setTheme] = useState('dark')
 
   const googleSignIn = () => {
     return signInWithPopup(auth, googleProvider);
