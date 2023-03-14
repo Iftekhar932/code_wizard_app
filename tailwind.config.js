@@ -6,7 +6,6 @@ module.exports = {
       backgroundImage: {
         loginBgImg:
           "url('https://i.ibb.co/Lg4nMN6/pietro-de-grandi-T7-K4a-EPo-GGk-unsplash.jpg')",
-        logo: "url('https://i.ibb.co/pLdwbKj/a6adbb.jpg')",
       },
     },
   },

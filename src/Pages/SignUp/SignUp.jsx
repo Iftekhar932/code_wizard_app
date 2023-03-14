@@ -1,6 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 const SignUp = () => {
+  const { emailSignUp } = useContext(AuthContext);
+
+  const handleEmailSignIn = (e) => {
+    e.preventDefault();
+    const name = e.target.name.value;
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    emailSignUp()
+      .then((res) => console.log(res.user))
+      .catch((err) => console.error("signup line 12", err.code, err.message));
+  };
+
   return (
     <div className="hero min-h-screen bg-base-200 bg-hero">
       <div className="hero-content flex-col w-2/4 lg:flex-row-reverse bg-gradient-to-r from-zinc-800 to-transparent">
@@ -10,7 +22,10 @@ const SignUp = () => {
             Don't have an account? sign up <Link to="/signup">here</Link>
           </p>
         </div>
-        <form className="card flex-shrink-0 w-full max-w-sm shadow-2xl">
+        <form
+          onSubmit={handleEmailSignIn}
+          className="card flex-shrink-0 w-full max-w-sm shadow-2xl"
+        >
           <div className="card-body">
             <div className="form-control">
               <label className="label">
