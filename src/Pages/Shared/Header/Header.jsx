@@ -1,27 +1,60 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
     <div className="navbar bg-base-100">
-      <div className="flex-1">
-        <Link to="/" className="btn btn-ghost normal-case text-xl">
-          daisyUI
-        </Link>
-        <Link
+      <div className="flex-1 justify-around">
+        <NavLink
+          to="/"
+          className={({ isActive, isPending }) =>
+            isPending
+              ? "btn btn-ghost normal-case text-xl"
+              : isActive
+              ? "btn btn-ghost normal-case text-xl text-violet-600"
+              : ""
+          }
+        >
+          <img src="https://i.ibb.co/pLdwbKj/a6adbb.jpg" height="4px" alt="" />
+        </NavLink>
+        <NavLink
           to="/login"
-          className="btn btn-ghost normal-case text-base active:text-violet-600"
+          className={({ isActive, isPending }) =>
+            isPending
+              ? "btn btn-ghost normal-case text-base"
+              : isActive
+              ? "btn btn-ghost normal-case text-base text-violet-600"
+              : ""
+          }
         >
           Login
-        </Link>
-        <Link className="btn btn-ghost normal-case text-base active:text-violet-600">
+        </NavLink>
+        <NavLink
+          to="/blog"
+          className={({ isActive, isPending }) =>
+            isPending
+              ? "btn btn-ghost normal-case text-base"
+              : isActive
+              ? "btn btn-ghost normal-case text-base text-violet-600"
+              : ""
+          }
+        >
           Blog
-        </Link>
-        <Link className="btn btn-ghost normal-case text-base active:text-violet-600">
+        </NavLink>
+        <NavLink
+          to="/about"
+          className={({ isActive, isPending }) =>
+            isPending
+              ? "btn btn-ghost normal-case text-base"
+              : isActive
+              ? "btn btn-ghost normal-case text-base text-violet-600"
+              : ""
+          }
+        >
           About
-        </Link>
+        </NavLink>
       </div>
-      <div className="flex-none">
+      <div className="flex-1 justify-end">
         <div className="dropdown dropdown-end">
           <label tabIndex={0} className="btn btn-ghost btn-circle">
             <div className="indicator">
