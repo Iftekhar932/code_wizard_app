@@ -6,6 +6,7 @@ import {
   signOut,
   onAuthStateChanged,
   updateProfile,
+  GithubAuthProvider,
   sendEmailVerification,
   sendPasswordResetEmail,
   deleteUser,
@@ -17,13 +18,18 @@ import {
 import app from "../../Firebase/firebase.init";
 
 const googleProvider = new GoogleAuthProvider();
+const githubProvider = new GithubAuthProvider();
 const auth = getAuth(app);
 
 export const AuthContext = createContext();
 
 const UserContext = ({ children }) => {
   const [user, setUser] = useState(null);
+
   const googleSignIn = () => {
+    return signInWithPopup(auth, googleProvider);
+  };
+  const handleGithubSignIn = () => {
     return signInWithPopup(auth, googleProvider);
   };
 
@@ -62,7 +68,19 @@ const UserContext = ({ children }) => {
     return reauthenticateWithCredential(user, credential);
   };
 
-  const authInfo = {};
+  const authInfo = {
+    googleSignIn,
+    googleSignIn,
+    emailSignUp,
+    emailVerificationMail,
+    pwdResetLinkMail,
+    emailLogIn,
+    collectName,
+    logOut,
+    userDeletion,
+    reAuthentication,
+    handleGithubSignIn,
+  };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
   );
