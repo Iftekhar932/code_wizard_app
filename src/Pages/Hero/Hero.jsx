@@ -10,7 +10,15 @@ const Hero = () => {
             Welcome to our website, How can we make our traveller have a
             majestic tour?
           </p>
-          <button className="btn btn-primary">Get Started</button>
+          <div className="drawer-content">
+            {/* <!-- Page content here --> */}
+            <label
+              htmlFor="my-drawer"
+              className="btn btn-primary drawer-button"
+            >
+              Open drawer
+            </label>
+          </div>
         </div>
       </div>
     </div>
