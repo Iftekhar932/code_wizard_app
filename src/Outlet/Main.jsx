@@ -6,7 +6,7 @@ const Main = () => {
   return (
     <>
       <Header></Header>
-      <SideDrawer />
+      {/* <SideDrawer /> */}
       <Outlet />
     </>
   );

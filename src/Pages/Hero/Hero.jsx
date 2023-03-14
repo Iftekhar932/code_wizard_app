@@ -1,27 +1,31 @@
 import React from "react";
+import SideDrawer from "../Shared/SideDrawer/SideDrawer";
 
 const Hero = () => {
   return (
-    <div className="hero min-h-screen bg-base-200">
-      <div className="hero-content text-center">
-        <div className="max-w-md">
-          <h1 className="text-5xl font-bold">Hello, Majestic traveller</h1>
-          <p className="py-6">
-            Welcome to our website, How can we make our traveller have a
-            majestic tour?
-          </p>
-          <div className="drawer-content">
-            {/* <!-- Page content here --> */}
-            <label
-              htmlFor="my-drawer"
-              className="btn btn-primary drawer-button"
-            >
-              Open drawer
-            </label>
+    <>
+      <SideDrawer />
+      <div className="hero min-h-screen bg-base-200">
+        <div className="hero-content text-center">
+          <div className="max-w-md">
+            <h1 className="text-5xl font-bold">Hello, Majestic traveller</h1>
+            <p className="py-6">
+              Welcome to our website, How can we make our traveller have a
+              majestic tour?
+            </p>
+            <div className="drawer-content">
+              {/* <!-- Page content here --> */}
+              <label
+                htmlFor="my-drawer"
+                className="btn btn-primary drawer-button"
+              >
+                Open drawer
+              </label>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
