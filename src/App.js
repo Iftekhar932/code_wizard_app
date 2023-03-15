@@ -11,6 +11,8 @@ function App() {
 
 export default App;
 
+// CHANGE BGIMG OF SIGNUP AND LOGIN PAGE TO SOME TECH RELATED IMAGE
+
 /* 🍎🍎 DELETE AFTER COMPLETION🍎🍎
 You have to create a website to provide a quality learning platform in the domains of Computer Science/ Information Technology/Programming Languages/ Web technology/ anything else (anything related to education). For example, JavaScript tutorial. Please note that you will select one of the options mentioned above/ any one topic regarding education. You can't make a website with a JavaScript tutorial, as we have given an example on it.
 
