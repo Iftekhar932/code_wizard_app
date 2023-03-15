@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import {
   getAuth,
   signInWithEmailAndPassword,
@@ -70,6 +70,15 @@ const UserContext = ({ children }) => {
     return reauthenticateWithCredential(user, credential);
   };
 
+  useEffect(() => {
+    const unSubscribe = () => {
+      onAuthStateChanged(auth, (currentUser) => {
+        setUser(currentUser);
+      });
+    };
+    return () => unSubscribe();
+  }, []);
+
   const authInfo = {
     googleSignIn,
     githubSignIn,
@@ -81,6 +90,8 @@ const UserContext = ({ children }) => {
     logOut,
     userDeletion,
     reAuthentication,
+    user,
+    setUser,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

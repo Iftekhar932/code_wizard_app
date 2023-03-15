@@ -1,9 +1,11 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Contexts/UserContext/UserContext";
+import { FaGithubSquare, FaGooglePlusSquare } from "react-icons/fa";
 
 const SignUp = () => {
-  const { emailSignUp, collectName } = useContext(AuthContext);
+  const { emailSignUp, collectName, githubSignIn, googleSignIn } =
+    useContext(AuthContext);
 
   const handleEmailSignIn = (e) => {
     e.preventDefault();
@@ -11,7 +13,6 @@ const SignUp = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
     const photoURL = e.target.photoURL.value;
-    console.log(e, name, email, password, photoURL);
     emailSignUp(email, password)
       .then((res) => {
         // update profile name
@@ -23,6 +24,20 @@ const SignUp = () => {
         console.log(res.user);
       })
       .catch((err) => console.error("signup line 12", err.code, err.message));
+  };
+
+  const handleGoogleLogin = (e) => {
+    e.preventDefault();
+    googleSignIn()
+      .then((res) => console.log(res.user))
+      .catch((err) => console.error("line 20 login", err.code, err.message));
+  };
+
+  const handleGithubSignIn = (e) => {
+    e.preventDefault();
+    githubSignIn()
+      .then((res) => console.log(res.user))
+      .catch((err) => console.error("line 20 login", err.code, err.message));
   };
 
   return (
@@ -99,6 +114,14 @@ const SignUp = () => {
             <div className="form-control mt-6">
               <button className="btn btn-primary">Register</button>
             </div>
+            <button onClick={githubSignIn} className="btn btn-primary">
+              <FaGithubSquare size="2em" className="text-zinc-100" />
+              Github Sign In
+            </button>
+            <button onClick={handleGoogleLogin} className="btn btn-primary">
+              <FaGooglePlusSquare size="2em" className="text-zinc-100" />
+              Google Sign In
+            </button>
           </div>
         </form>
       </div>

@@ -1,10 +1,9 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Contexts/UserContext/UserContext";
-import { FaGithubSquare, FaGooglePlusSquare } from "react-icons/fa";
 
 const Login = () => {
-  const { emailLogIn, githubSignIn, googleSignIn } = useContext(AuthContext);
+  const { emailLogIn } = useContext(AuthContext);
 
   const handleEmailSignIn = (e) => {
     e.preventDefault();
@@ -13,13 +12,6 @@ const Login = () => {
     emailLogIn()
       .then((res) => console.log(res.user))
       .catch((err) => console.error("login line 12", err.code, err.message));
-  };
-
-  const handleGoogleLogin = (e) => {
-    e.preventDefault();
-    googleSignIn()
-      .then((res) => console.log(res.user))
-      .catch((err) => console.error("line 20 login", err.code, err.message));
   };
 
   return (
@@ -64,14 +56,6 @@ const Login = () => {
             <div className="form-control mt-6">
               <button className="btn btn-primary">Login</button>
             </div>
-            <button className="btn btn-primary " onClick={githubSignIn}>
-              <FaGithubSquare size="2em" className="text-zinc-100" />
-              Github Sign In
-            </button>
-            <button onClick={googleSignIn} className="btn btn-primary">
-              <FaGooglePlusSquare size="2em" className="text-zinc-100" />
-              Google Sign In
-            </button>
           </form>
         </div>
       </div>

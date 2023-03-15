@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../../Contexts/UserContext/UserContext";
 
 const Header = () => {
+  const { logOut, user } = useContext(AuthContext);
   return (
     <div className="navbar bg-base-100">
       <div className="flex-1 justify-around">
@@ -109,9 +111,11 @@ const Header = () => {
             <li>
               <a>Settings</a>
             </li>
-            <li>
-              <a>Logout</a>
-            </li>
+            {user?.email || user?.uid ? (
+              <li>
+                <Link onClick={logOut}>Logout</Link>
+              </li>
+            ) : null}
           </ul>
         </div>
       </div>
