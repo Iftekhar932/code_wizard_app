@@ -30,14 +30,14 @@ const SignUp = () => {
     e.preventDefault();
     googleSignIn()
       .then((res) => console.log(res.user))
-      .catch((err) => console.error("line 20 login", err.code, err.message));
+      .catch((err) => console.error("line 20 signup", err.code, err.message));
   };
 
   const handleGithubSignIn = (e) => {
     e.preventDefault();
     githubSignIn()
       .then((res) => console.log(res.user))
-      .catch((err) => console.error("line 20 login", err.code, err.message));
+      .catch((err) => console.error("line 20 signup", err.code, err.message));
   };
 
   return (
@@ -114,7 +114,7 @@ const SignUp = () => {
             <div className="form-control mt-6">
               <button className="btn btn-primary">Register</button>
             </div>
-            <button onClick={githubSignIn} className="btn btn-primary">
+            <button onClick={handleGithubSignIn} className="btn btn-primary">
               <FaGithubSquare size="2em" className="text-zinc-100" />
               Github Sign In
             </button>
