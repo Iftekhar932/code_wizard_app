@@ -8,8 +8,16 @@ const SignUp = () => {
     const name = e.target.name.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-    emailSignUp()
-      .then((res) => console.log(res.user))
+    const photoURL = e.target.photoURL.value;
+    emailSignUp(email, password)
+      .then((res) => {
+        // update profile name
+        updateProfile(auth.currentUser, {
+          displayName: name,
+          photoURL: photoURL,
+        });
+        console.log(res.user);
+      })
       .catch((err) => console.error("signup line 12", err.code, err.message));
   };
 
@@ -27,6 +35,18 @@ const SignUp = () => {
           className="card flex-shrink-0 w-full max-w-sm shadow-2xl"
         >
           <div className="card-body">
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">PhotoURL</span>
+              </label>
+              <input
+                type="PhotoURL"
+                placeholder="Enter your PhotoURL"
+                name="PhotoURL"
+                className="input input-bordered"
+                required
+              />
+            </div>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Name</span>
