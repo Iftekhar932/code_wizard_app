@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Contexts/UserContext/UserContext";
+
 const SignUp = () => {
-  const { emailSignUp } = useContext(AuthContext);
+  const { emailSignUp, collectName } = useContext(AuthContext);
 
   const handleEmailSignIn = (e) => {
     e.preventDefault();
@@ -9,13 +11,15 @@ const SignUp = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
     const photoURL = e.target.photoURL.value;
+    console.log(e, name, email, password, photoURL);
     emailSignUp(email, password)
       .then((res) => {
         // update profile name
-        updateProfile(auth.currentUser, {
-          displayName: name,
-          photoURL: photoURL,
-        });
+        collectName(name, photoURL)
+          .then(() => console.log("name set"))
+          .catch((err) =>
+            console.error("line 19 update profile", err.code, err.message)
+          );
         console.log(res.user);
       })
       .catch((err) => console.error("signup line 12", err.code, err.message));
@@ -25,9 +29,13 @@ const SignUp = () => {
     <div className="hero min-h-screen bg-base-200 bg-hero">
       <div className="hero-content flex-col w-2/4 lg:flex-row-reverse bg-gradient-to-r from-zinc-800 to-transparent">
         <div className="text-center lg:text-left text-zinc-100">
-          <h1 className="text-5xl font-bold">Login now!</h1>
+          <h1 className="text-5xl font-bold">Signup now!</h1>
           <p className="py-6">
-            Don't have an account? sign up <Link to="/signup">here</Link>
+            Already have an account? Login
+            <Link to="/login" className="link">
+              {" "}
+              here
+            </Link>
           </p>
         </div>
         <form
@@ -42,7 +50,7 @@ const SignUp = () => {
               <input
                 type="PhotoURL"
                 placeholder="Enter your PhotoURL"
-                name="PhotoURL"
+                name="photoURL"
                 className="input input-bordered"
                 required
               />
@@ -77,7 +85,7 @@ const SignUp = () => {
               </label>
               <input
                 type="password"
-                placeholder="password"
+                placeholder="Enter your password"
                 name="password"
                 className="input input-bordered"
                 required

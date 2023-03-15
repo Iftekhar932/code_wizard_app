@@ -44,7 +44,7 @@ const Header = () => {
           Blog
         </NavLink>
         <NavLink
-          to="/about"
+          to="/faq"
           className={({ isActive, isPending }) =>
             isPending
               ? "btn btn-ghost normal-case text-base"
@@ -53,7 +53,7 @@ const Header = () => {
               : ""
           }
         >
-          About
+          FAQ
         </NavLink>
       </div>
       <div className="flex-1 justify-end">
