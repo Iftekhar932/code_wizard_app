@@ -6,7 +6,6 @@ const Header = () => {
   const { logOut, user } = useContext(AuthContext);
   const [theme, setTheme] = useState("cupcake");
   useEffect(() => {
-    console.log(document.querySelector("html"));
     return document.querySelector("html").setAttribute("data-theme", theme);
   }, [theme]);
 
@@ -102,6 +101,7 @@ const Header = () => {
             </div>
           </div>
         </div>
+
         <div className="dropdown dropdown-end">
           <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full">
@@ -112,6 +112,7 @@ const Header = () => {
               )}
             </div>
           </label>
+
           <ul
             tabIndex={0}
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
@@ -134,6 +135,44 @@ const Header = () => {
               </li>
             ) : null}
           </ul>
+
+          <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+            <div className="w-10 rounded-full">
+              {user?.photoURL ? (
+                <img src={user?.photoURL} />
+              ) : (
+                <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+              )}
+            </div>
+          </label>
+
+          {/* CHANGE THIS SECTION OPTIONS TO THEMES */}
+          {/* WITH ONCLICK FUNCTION */}
+          <ul
+            tabIndex={0}
+            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+          >
+            <li>
+              <a className="justify-between">
+                Profile
+                <span className="badge">New</span>
+              </a>
+            </li>
+            <li onClick={handleToggle}>
+              <span>toggle</span>
+            </li>
+            <li>
+              <a>Settings</a>
+            </li>
+            {user?.email || user?.uid ? (
+              <li>
+                <Link onClick={logOut}>Logout</Link>
+              </li>
+            ) : null}
+          </ul>
+          {/* WITH ONCLICK FUNCTION */}
+
+          {/* CHANGE THIS SECTION OPTIONS TO THEMES */}
         </div>
       </div>
     </div>
