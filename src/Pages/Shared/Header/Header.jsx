@@ -22,7 +22,7 @@ const Header = () => {
           </div>
         </NavLink>
         <NavLink
-          to="/login"
+          to="/courses"
           className={({ isActive, isPending }) =>
             isPending
               ? "btn btn-ghost normal-case text-base"
@@ -31,7 +31,7 @@ const Header = () => {
               : ""
           }
         >
-          Login
+          Courses
         </NavLink>
         <NavLink
           to="/blog"

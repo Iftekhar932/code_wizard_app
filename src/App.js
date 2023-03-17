@@ -16,15 +16,15 @@ export default App;
 /* 🍎🍎 DELETE AFTER COMPLETION🍎🍎
 You have to create a website to provide a quality learning platform in the domains of Computer Science/ Information Technology/Programming Languages/ Web technology/ anything else (anything related to education). For example, JavaScript tutorial. Please note that you will select one of the options mentioned above/ any one topic regarding education. You can't make a website with a JavaScript tutorial, as we have given an example on it.
 
-Make sure your design and website idea are unique. First, finalize your idea (What type of website do you want to build). Then google the site design or visit ThemeForest to get your website idea. However, your website can not relate to your previous assignments or any demo project displayed in the course or our conceptual sessions.
+✅✔️✅✔️✅✔️Make sure your design and website idea are unique. First, finalize your idea (What type of website do you want to build). Then google the site design or visit ThemeForest to get your website idea. However, your website can not relate to your previous assignments or any demo project displayed in the course or our conceptual sessions.✅✔️✅✔️✅✔️
 
-Give your website a name. The name should appear on the website and be displayed on the website's title.
+✅✔️✅✔️✅✔️Give your website a name. The name should appear on the website and be displayed on the website's title.✅✔️✅✔️✅✔️
 
 It will contain a navbar with the options: website logo, website name, Courses, FAQ, Blog, toggle theme (dark/ light), and User Profile Picture (or login). The user profile picture on the navbar is conditional. If the user is signed in, the navbar will show the profile pic. The user's name will be visible when the mouse is in the picture.
 
-After clicking "Log in," it will redirect to a login page. 3 types of login systems you have to implement: Email & password login, Google, and GitHub login. The login page will have a toggle option to go to the register page.
+✅✔️✅✔️✅✔️After clicking "Log in," it will redirect to a login page. 3 types of login systems you have to implement: Email & password login, Google, and GitHub login. The login page will have a toggle option to go to the register page.✅✔️✅✔️✅✔️
 
-In your Email and Password registration form, there should be an input box for "Full name," where the user will type their full name. Other fields will be Photo URL, Email, and Password.
+✅✔️✅✔️✅✔️✅✔️In your Email and Password registration form, there should be an input box for "Full name," where the user will type their full name. Other fields will be Photo URL, Email, and Password.✅✔️✅✔️✅✔️✅✔️
 
 Clicking "Courses" in the navbar (You can change this name to any meaningful name according to your design, but the purpose of this button should be the same according to our description) will redirect to a page that shows the courses. (Creating a fake dataset is necessary here). You have to create at least 6 courses (fake data). Design & course information is all up to you. (Load data from the server side - must). You can create one, two, or more courses in a row.
 

@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Outlet/Main";
+import Cards from "../Pages/Cards/Cards";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import ResetForm from "../Pages/ResetForm/ResetForm";
@@ -25,6 +26,10 @@ export const routes = createBrowserRouter([
       {
         path: "/resetPwd",
         element: <ResetForm></ResetForm>,
+      },
+      {
+        path: "/courses",
+        element: <Cards></Cards>,
       },
     ],
   },

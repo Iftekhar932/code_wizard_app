@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         loginBgImg:
-          "url('https://i.ibb.co/Lg4nMN6/pietro-de-grandi-T7-K4a-EPo-GGk-unsplash.jpg')",
+          "url('https://i.ibb.co/6JLVVKM/nasa-Q1p7bh3-SHj8-unsplash-C.jpg')",
       },
     },
   },
