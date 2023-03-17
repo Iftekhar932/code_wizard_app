@@ -1,9 +1,19 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../Contexts/UserContext/UserContext";
 
 const Header = () => {
   const { logOut, user } = useContext(AuthContext);
+  const [theme, setTheme] = useState("cupcake");
+  useEffect(() => {
+    console.log(document.querySelector("html"));
+    return document.querySelector("html").setAttribute("data-theme", theme);
+  }, [theme]);
+
+  const handleToggle = () => {
+    return theme == "dark" ? setTheme("light") : setTheme("dark");
+  };
+
   return (
     <div className="navbar bg-base-100">
       <div className="flex-1 justify-around">
@@ -111,6 +121,9 @@ const Header = () => {
                 Profile
                 <span className="badge">New</span>
               </a>
+            </li>
+            <li onClick={handleToggle}>
+              <span>toggle</span>
             </li>
             <li>
               <a>Settings</a>
