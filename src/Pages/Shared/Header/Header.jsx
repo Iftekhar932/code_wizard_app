@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../Contexts/UserContext/UserContext";
-import { FaUserAlt } from "react-icons/fa";
+import { FaUserAlt, FaSun } from "react-icons/fa";
 
 const Header = () => {
   const { logOut, user } = useContext(AuthContext);
@@ -72,7 +72,8 @@ const Header = () => {
         </NavLink>
       </div>
 
-      {/*  */}
+      {/* NAV DROPDOWN START */}
+      {/* USER PROFILE DROPDOWN START */}
       <div className="flex-1 justify-end">
         <div className="dropdown dropdown-end">
           <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
@@ -105,20 +106,16 @@ const Header = () => {
           </ul>
         </div>
 
-        {/*  */}
+        {/* USER PROFILE DROPDOWN END */}
+
+        {/* THEMES DROPDOWN START */}
         <div className="dropdown dropdown-end">
           <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full">
-              {user?.photoURL ? (
-                <img src={user?.photoURL} />
-              ) : (
-                <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-              )}
+              <FaSun size="2.8em" />
             </div>
           </label>
 
-          {/* CHANGE THIS SECTION OPTIONS TO THEMES */}
-          {/* WITH ONCLICK FUNCTION */}
           <ul
             tabIndex={0}
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
@@ -151,16 +148,15 @@ const Header = () => {
             >
               <span>Night</span>
             </li>
-            <li
-              onClick={() => {
-                clickHandler("night");
-              }}
-            >
-              <span>Select Default Theme</span>
+            <li>
+              <div className="divider mb-0 mt-0"></div>
+              <span className="justify-center align-items-center">
+                Select Default Theme
+              </span>
             </li>
           </ul>
-          {/* WITH ONCLICK FUNCTION */}
-          {/* CHANGE THIS SECTION OPTIONS TO THEMES */}
+          {/* THEMES DROPDOWN END */}
+          {/* NAV DROPDOWN END */}
         </div>
       </div>
     </div>
