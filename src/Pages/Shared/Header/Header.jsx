@@ -4,10 +4,14 @@ import { AuthContext } from "../../../Contexts/UserContext/UserContext";
 
 const Header = () => {
   const { logOut, user } = useContext(AuthContext);
-  const [theme, setTheme] = useState("");
+  /* const [theme, setTheme] = useState("");
   useEffect(() => {
     return document.querySelector("html").setAttribute("data-theme", theme);
   }, [theme]);
+   */
+  const clickHandle = (theme) => {
+    document.querySelector("html").setAttribute("data-theme", theme);
+  };
 
   return (
     <div className="navbar bg-base-100">
@@ -150,35 +154,35 @@ const Header = () => {
           >
             <li
               onClick={() => {
-                setTheme("cupcake");
+                clickHandle("cupcake");
               }}
             >
               <span>Cupcake</span>
             </li>
             <li
               onClick={() => {
-                setTheme("cyberpunk");
+                clickHandle("cyberpunk");
               }}
             >
               <span>CyberPunk</span>
             </li>
             <li
               onClick={() => {
-                setTheme("dark");
+                clickHandle("dark");
               }}
             >
               <span>Dark</span>
             </li>
             <li
               onClick={() => {
-                setTheme("night");
+                clickHandle("night");
               }}
             >
               <span>Night</span>
             </li>
             <li
               onClick={() => {
-                setTheme("night");
+                clickHandle("night");
               }}
             >
               <span>Select Default Theme</span>
