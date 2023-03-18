@@ -78,7 +78,11 @@ const Header = () => {
         <div className="dropdown dropdown-end">
           <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full">
-              {user?.photoURL ? <img src={user?.photoURL} /> : <FaUserAlt />}
+              {user?.photoURL ? (
+                <img src={user?.photoURL} />
+              ) : (
+                <FaUserAlt size="2.7em" />
+              )}
             </div>
           </label>
 
@@ -102,7 +106,11 @@ const Header = () => {
               <li>
                 <Link onClick={logOut}>Logout</Link>
               </li>
-            ) : null}
+            ) : (
+              <li>
+                <Link to="/login">Login</Link>
+              </li>
+            )}
           </ul>
         </div>
 
