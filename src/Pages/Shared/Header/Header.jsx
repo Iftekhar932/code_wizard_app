@@ -1,21 +1,20 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../Contexts/UserContext/UserContext";
+import { FaUserAlt } from "react-icons/fa";
 
 const Header = () => {
   const { logOut, user } = useContext(AuthContext);
-  // const selectedTheme = localStorage.getItem("theme");
   const [theme, setTheme] = useState(localStorage.getItem("theme"));
 
+  // on every render it sets 'data-theme' to the html tag
   useEffect(() => {
     return document.querySelector("html").setAttribute("data-theme", theme);
   }, [theme]);
 
   const clickHandler = (themeName) => {
-    // document.querySelector("html").dataset.theme = themeName;
-    localStorage.setItem("theme", themeName);
-
-    setTheme(themeName);
+    localStorage.setItem("theme", themeName); //  it stores the last theme to prevent the page from changing to default theme when page reloads
+    setTheme(themeName); // to initially set the selected theme by the user
   };
 
   return (
@@ -74,43 +73,38 @@ const Header = () => {
       </div>
 
       {/*  */}
-
-      <div className="dropdown dropdown-end">
-        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-          <div className="w-10 rounded-full">
-            {user?.photoURL ? (
-              <img src={user?.photoURL} />
-            ) : (
-              <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-            )}
-          </div>
-        </label>
-
-        <ul
-          tabIndex={0}
-          className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
-        >
-          <li>
-            <a className="justify-between">
-              Profile
-              <span className="badge">New</span>
-            </a>
-          </li>
-          <li>
-            <span>toggle</span>
-          </li>
-          <li>
-            <a>Settings</a>
-          </li>
-          {user?.email || user?.uid ? (
-            <li>
-              <Link onClick={logOut}>Logout</Link>
-            </li>
-          ) : null}
-        </ul>
-      </div>
-
       <div className="flex-1 justify-end">
+        <div className="dropdown dropdown-end">
+          <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+            <div className="w-10 rounded-full">
+              {user?.photoURL ? <img src={user?.photoURL} /> : <FaUserAlt />}
+            </div>
+          </label>
+
+          <ul
+            tabIndex={0}
+            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+          >
+            <li>
+              <a className="justify-between">
+                Profile
+                <span className="badge">New</span>
+              </a>
+            </li>
+            <li>
+              <span>toggle</span>
+            </li>
+            <li>
+              <a>Settings</a>
+            </li>
+            {user?.email || user?.uid ? (
+              <li>
+                <Link onClick={logOut}>Logout</Link>
+              </li>
+            ) : null}
+          </ul>
+        </div>
+
         {/*  */}
         <div className="dropdown dropdown-end">
           <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
