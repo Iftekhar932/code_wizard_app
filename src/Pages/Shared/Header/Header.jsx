@@ -4,14 +4,10 @@ import { AuthContext } from "../../../Contexts/UserContext/UserContext";
 
 const Header = () => {
   const { logOut, user } = useContext(AuthContext);
-  const [theme, setTheme] = useState("cupcake");
+  const [theme, setTheme] = useState("");
   useEffect(() => {
     return document.querySelector("html").setAttribute("data-theme", theme);
   }, [theme]);
-
-  const handleToggle = () => {
-    return theme == "dark" ? setTheme("light") : setTheme("dark");
-  };
 
   return (
     <div className="navbar bg-base-100">
@@ -123,7 +119,7 @@ const Header = () => {
                 <span className="badge">New</span>
               </a>
             </li>
-            <li onClick={handleToggle}>
+            <li>
               <span>toggle</span>
             </li>
             <li>
@@ -152,23 +148,41 @@ const Header = () => {
             tabIndex={0}
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
-            <li>
-              <a className="justify-between">
-                Profile
-                <span className="badge">New</span>
-              </a>
+            <li
+              onClick={() => {
+                setTheme("cupcake");
+              }}
+            >
+              <span>Cupcake</span>
             </li>
-            <li onClick={handleToggle}>
-              <span>toggle</span>
+            <li
+              onClick={() => {
+                setTheme("cyberpunk");
+              }}
+            >
+              <span>CyberPunk</span>
             </li>
-            <li>
-              <a>Settings</a>
+            <li
+              onClick={() => {
+                setTheme("dark");
+              }}
+            >
+              <span>Dark</span>
             </li>
-            {user?.email || user?.uid ? (
-              <li>
-                <Link onClick={logOut}>Logout</Link>
-              </li>
-            ) : null}
+            <li
+              onClick={() => {
+                setTheme("night");
+              }}
+            >
+              <span>Night</span>
+            </li>
+            <li
+              onClick={() => {
+                setTheme("night");
+              }}
+            >
+              <span>Select Default Theme</span>
+            </li>
           </ul>
           {/* WITH ONCLICK FUNCTION */}
 
