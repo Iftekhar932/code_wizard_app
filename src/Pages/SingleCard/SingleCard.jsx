@@ -5,7 +5,7 @@ const SingleCard = () => {
     <div className="card w-96 bg-base-100 shadow-xl">
       <figure>
         <img
-          src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+          src="https://johnsmilga.com/_next/image?url=https%3A%2F%2Fimages2.imgbox.com%2F8d%2F44%2Fm5ICZQsi_o.png&w=1920&q=100"
           alt="Shoes"
         />
       </figure>
