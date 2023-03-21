@@ -2,7 +2,7 @@ import React from "react";
 
 const SideDrawer = () => {
   return (
-    <div className="drawer absolute">
+    <div className="drawer absolute z-10">
       <input id="my-drawer" type="checkbox" className="drawer-toggle" />
       {/* <!-- Page content here --> */}
       {/* <div className="drawer-content">
