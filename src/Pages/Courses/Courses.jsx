@@ -11,7 +11,7 @@ const Courses = () => {
       <label htmlFor="my-drawer" className="btn btn-primary ">
         More Courses
       </label>
-      <SideDrawer />
+      <SideDrawer data={data} />
       <Cards data={data} />
     </div>
   );
