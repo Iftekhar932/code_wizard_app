@@ -15,10 +15,10 @@ const SideDrawer = () => {
         <ul className="menu p-4 w-80 bg-base-100 text-base-content">
           {/* <!-- Sidebar content here --> */}
           <li>
-            <a>Sidebar Item 1</a>
+            <a>Web Development</a>
           </li>
           <li>
-            <a>Sidebar Item 2</a>
+            <a>App Development</a>
           </li>
         </ul>
       </div>

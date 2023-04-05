@@ -6,6 +6,8 @@ import Login from "../Pages/Login/Login";
 import ResetForm from "../Pages/ResetForm/ResetForm";
 import SignUp from "../Pages/SignUp/SignUp";
 import Courses from "../Pages/Courses/Courses";
+import FAQ from "../Pages/FAQ/FAQ";
+import Blog from "../Pages/Blog/Blog";
 
 export const routes = createBrowserRouter([
   {
@@ -27,6 +29,14 @@ export const routes = createBrowserRouter([
       {
         path: "/resetPwd",
         element: <ResetForm></ResetForm>,
+      },
+      {
+        path: "/faq",
+        element: <FAQ></FAQ>,
+      },
+      {
+        path: "/blog",
+        element: <Blog></Blog>,
       },
       {
         path: "/courses",

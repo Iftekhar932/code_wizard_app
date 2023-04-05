@@ -5,10 +5,11 @@ import SideDrawer from "../Shared/SideDrawer/SideDrawer";
 
 const Courses = () => {
   const data = useLoaderData();
+
   return (
     <div className="mt-12">
       <label htmlFor="my-drawer" className="btn btn-primary ">
-        Open drawer
+        More Courses
       </label>
       <SideDrawer />
       <Cards data={data} />
