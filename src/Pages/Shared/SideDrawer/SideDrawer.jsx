@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const SideDrawer = ({ data }) => {
-  console.log(data);
   return (
     <div className="drawer absolute z-10">
       <input id="my-drawer" type="checkbox" className="drawer-toggle" />
