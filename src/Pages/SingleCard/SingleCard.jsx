@@ -12,7 +12,7 @@ const SingleCard = ({ singleData }) => {
       <div className="card-body">
         <h2 className="card-title capitalize">{title}</h2>
         <p>{miniDesc}</p>
-        <Link to={`/courseDetails/${id}`} className="btn btn-primary">
+        <Link to={`/courseDetail/${id}`} className="btn btn-primary">
           Details
         </Link>
       </div>

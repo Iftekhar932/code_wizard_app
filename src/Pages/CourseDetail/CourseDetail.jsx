@@ -3,8 +3,17 @@ import { useLoaderData } from "react-router-dom";
 
 const CourseDetail = () => {
   const data = useLoaderData();
-  console.log("🚀 ~ file: CourseDetail.jsx:6 ~ CourseDetail ~ data:", data);
-
+  const {
+    id,
+    duration,
+    miniDesc,
+    fullDescription,
+    img,
+    ratings,
+    category,
+    subCategory,
+    title,
+  } = data;
   return (
     <div>
       <article></article>
