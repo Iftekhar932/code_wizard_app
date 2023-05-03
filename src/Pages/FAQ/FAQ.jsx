@@ -1,7 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
+import { Rating } from "react-simple-star-rating";
+import "./FAQ.css";
 
 const FAQ = () => {
-  return <div>FAQ</div>;
+  const [rating, setRating] = useState(0);
+
+  // Catch Rating value
+  const handleRating = (rate) => {
+    return setRating(rate);
+
+    // other logic
+  };
+
+  // optional callback functions
+  const onPointerEnter = () => console.log("Enter");
+  const onPointerLeave = () => console.log("Leave");
+  const onPointerMove = (value, index) => console.log(value, index);
+
+  return (
+    <div className="ratingBox">
+      <Rating
+        onClick={handleRating}
+        onPointerEnter={onPointerEnter}
+        onPointerLeave={onPointerLeave}
+        onPointerMove={onPointerMove}
+        fillStyle={{ display: "flex" }}
+        // SVGstyle={{ display: "flex" }}
+        // style={{ display: "flex" }}
+        emptyStyle={{ display: "flex" }}
+        // tooltipStyle={{ display: "flex" }}
+
+        /* Available Props */
+      />
+    </div>
+  );
 };
 
 export default FAQ;

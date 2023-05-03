@@ -1,5 +1,6 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
+import FAQ from "../FAQ/FAQ";
 
 const CourseDetail = () => {
   const data = useLoaderData();
@@ -26,6 +27,7 @@ const CourseDetail = () => {
         <picture>
           <img src="" alt="" />
         </picture>
+        <FAQ />
       </article>
     </div>
   );
