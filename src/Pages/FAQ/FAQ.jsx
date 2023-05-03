@@ -16,8 +16,8 @@ const FAQ = () => {
   const onPointerEnter = () => console.log("Enter");
   const onPointerLeave = () => console.log("Leave");
   const onPointerMove = (value, index) => console.log(value, index);
-
-  return (
+  //www.youtube.com/watch?v=TNSfesnsVTk try this video link
+  https: return (
     <div className="ratingBox">
       <Rating
         onClick={handleRating}
@@ -29,7 +29,7 @@ const FAQ = () => {
         // style={{ display: "flex" }}
         emptyStyle={{ display: "flex" }}
         // tooltipStyle={{ display: "flex" }}
-
+        disableFillHover={true}
         /* Available Props */
       />
     </div>
