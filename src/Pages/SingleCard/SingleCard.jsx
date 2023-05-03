@@ -7,7 +7,7 @@ const SingleCard = ({ singleData }) => {
   return (
     <div className="card pt-4 w-96 shadow-xl border border-base-200">
       <figure>
-        <img src={img} alt={title} />
+        <img src={img} alt={title} className="rounded-full" />
       </figure>
       <div className="card-body">
         <h2 className="card-title capitalize">{title}</h2>
