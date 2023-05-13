@@ -27,7 +27,6 @@ const CourseDetail = () => {
         <picture>
           <img src="" alt="" />
         </picture>
-        <FAQ />
       </article>
     </div>
   );
