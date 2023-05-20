@@ -6,7 +6,6 @@ const FAQ = () => {
   const userData = useLoaderData();
   const [user, setUser] = useState(userData);
   const [displayUser, setDisplayUser] = useState(userData);
-
   const blurHandler = (e) => {
     const field = e.target.name;
     const value = e.target.value;
@@ -24,11 +23,29 @@ const FAQ = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         if (data.acknowledged) {
+          console.log(data);
           alert("User created");
         }
       });
+
+    /* fetch(`http://localhost:5000/updateUser/${userInfo._id}`, {
+      method: "PUT",
+      body: JSON.stringify(userInfo),
+      headers: { "Content-Type": "application/json" },
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data)); */
+  };
+
+  const updateHandler = (userInfo) => {
+    fetch(`http://localhost:5000/updateUser/${userInfo._id}`, {
+      method: "PUT",
+      body: JSON.stringify(userInfo),
+      headers: { "Content-Type": "application/json" },
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
   };
 
   const deleteHandler = (userInfo) => {
@@ -51,18 +68,28 @@ const FAQ = () => {
     }
   };
 
+  // incomplete yet 👇👇
   const getSingleUser = (userInfo) => {
     fetch(`http://localhost:5000/getUser/${userInfo._id}`)
       .then((res) => res.json())
       .then((data) => console.log("front 58", data));
   };
+
   return (
-    <div className="ratingBox">
+    <div className="App">
       <h1>
         www.youtube.com/watch?v=TNSfesnsVTk try this video link for star rate
         setting
       </h1>
+
       <form onSubmit={submitHandler}>
+        <input type="text" name="username" onBlur={blurHandler} required />
+        <input type="email" name="email" onBlur={blurHandler} required />
+        <button type="submit">Submit</button>
+      </form>
+
+      <h1>Update user info below</h1>
+      <form>
         <input type="text" name="username" onBlur={blurHandler} required />
         <input type="email" name="email" onBlur={blurHandler} required />
         <button type="submit">Submit</button>
@@ -76,6 +103,9 @@ const FAQ = () => {
                 delete {index}
               </button>
               <button onClick={() => getSingleUser(singleUser)}>
+                Display One{" "}
+              </button>
+              <button onClick={() => updateHandler(singleUser)}>
                 Display One{" "}
               </button>
             </li>
