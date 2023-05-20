@@ -6,6 +6,8 @@ const FAQ = () => {
   const userData = useLoaderData();
   const [user, setUser] = useState(userData);
   const [displayUser, setDisplayUser] = useState(userData);
+  const [updateData, setUpdateData] = useState({});
+
   const blurHandler = (e) => {
     const field = e.target.name;
     const value = e.target.value;
@@ -15,7 +17,8 @@ const FAQ = () => {
     setUser(newUser);
   };
 
-  const submitHandler = () => {
+  const submitHandler = (flag) => {
+    flag = "POST" || "PUT";
     fetch("http://localhost:5000/postUser", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -39,13 +42,22 @@ const FAQ = () => {
   };
 
   const updateHandler = (userInfo) => {
-    fetch(`http://localhost:5000/updateUser/${userInfo._id}`, {
-      method: "PUT",
-      body: JSON.stringify(userInfo),
-      headers: { "Content-Type": "application/json" },
-    })
-      .then((res) => res.json())
-      .then((data) => console.log(data));
+    setUpdateData(userInfo);
+  };
+
+  const updateHandler2 = (e) => {
+    e.preventDefault();
+    try {
+      fetch(`http://localhost:5000/getUser/${updateData._id}`, {
+        method: "PUT",
+        body: JSON.stringify(user),
+        headers: { "Content-Type": "application/json" },
+      })
+        .then((res) => res.json())
+        .then((data) => console.log(data));
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const deleteHandler = (userInfo) => {
@@ -60,7 +72,7 @@ const FAQ = () => {
             console.log(data);
             alert("deleted");
             const remainingUser = displayUser.filter(
-              (usr) => usr._id != userInfo._id
+              (usr) => usr._id !== userInfo._id
             );
             setDisplayUser(remainingUser);
           }
@@ -89,9 +101,21 @@ const FAQ = () => {
       </form>
 
       <h1>Update user info below</h1>
-      <form>
-        <input type="text" name="username" onBlur={blurHandler} required />
-        <input type="email" name="email" onBlur={blurHandler} required />
+      <form onClick={updateHandler2}>
+        <input
+          type="text"
+          name="username"
+          defaultValue={updateData.username}
+          onBlur={blurHandler}
+          required
+        />
+        <input
+          type="email"
+          name="email"
+          defaultValue={updateData.email}
+          onBlur={blurHandler}
+          required
+        />
         <button type="submit">Submit</button>
       </form>
       <ul>
@@ -106,7 +130,7 @@ const FAQ = () => {
                 Display One{" "}
               </button>
               <button onClick={() => updateHandler(singleUser)}>
-                Display One{" "}
+                Update info{" "}
               </button>
             </li>
           );
