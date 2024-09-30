@@ -14,7 +14,6 @@ const Hero = () => {
               majestic tour?
             </p>
             <div className="drawer-content">
-              {/* <!-- Page content here --> */}
               <label
                 htmlFor="my-drawer"
                 className="btn btn-primary drawer-button"
