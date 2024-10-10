@@ -5,13 +5,10 @@ import SideDrawer from "../Shared/SideDrawer/SideDrawer";
 
 const Courses = () => {
   const data = useLoaderData();
+  console.log("🚀 ~ Courses ~ data:", data);
 
   return (
     <div className="mt-12">
-      <label htmlFor="my-drawer" className="btn btn-primary ">
-        More Courses
-      </label>
-      <SideDrawer data={data} />
       <Cards data={data} />
     </div>
   );

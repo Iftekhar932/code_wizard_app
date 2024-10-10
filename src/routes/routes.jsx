@@ -33,9 +33,9 @@ export const routes = createBrowserRouter([
       {
         path: "/faq",
         element: <FAQ></FAQ>,
-        loader: () => {
+        /* loader: () => {
           return fetch("http://localhost:5000/users");
-        },
+        }, */
       },
       {
         path: "/blog",
@@ -45,23 +45,23 @@ export const routes = createBrowserRouter([
         path: "/courses",
         element: <Courses></Courses>,
         loader: () => {
-          return fetch("http://localhost:5000/courses");
+          return fetch("http://localhost:5000/products");
         },
       },
 
       {
         path: "/courses/:category",
         element: <Courses></Courses>,
-        loader: ({ params }) => {
+        /*  loader: ({ params }) => {
           return fetch(`http://localhost:5000/courses/${params.category}`);
-        },
+        }, */
       },
       {
         path: "/courseDetail/:id",
         element: <CourseDetail></CourseDetail>,
-        loader: ({ params }) => {
+        /*   loader: ({ params }) => {
           return fetch(`http://localhost:5000/courseDetail/${params.id}`);
-        },
+        }, */
       },
     ],
   },
