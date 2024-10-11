@@ -19,7 +19,7 @@ const Header = () => {
 
   return (
     <div className="navbar bg-base-100">
-      <div className="flex-1 justify-around">
+      <div className="flex gap-5">
         <NavLink
           to="/"
           className={({ isActive, isPending }) =>
