@@ -30,8 +30,11 @@ const Header = () => {
               : ""
           }
         >
-          <div className="w-12 rounded-full">
-            <img src="https://i.ibb.co/pLdwbKj/a6adbb.jpg" />
+          <div className="w-12">
+            <img
+              src="https://i.ibb.co/pLdwbKj/a6adbb.jpg"
+              className="rounded-full"
+            />
           </div>
         </NavLink>
         <NavLink
