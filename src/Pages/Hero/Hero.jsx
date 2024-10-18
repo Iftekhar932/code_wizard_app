@@ -1,6 +1,7 @@
 import React from "react";
 import { ReactTyped } from "react-typed";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import HeroDesign from "./Hero.css";
 
 const Hero = () => {
   return (
@@ -8,7 +9,7 @@ const Hero = () => {
       <div className="hero min-h-screen bg-base-200">
         {/* 🟪 animation component  🟪*/}
         <DotLottieReact
-          className="fixed blur-sm mix-blend-hard-light dark:mix-blend-soft-light"
+          className="fixed blur-sm mix-blend-hard-light w-screen"
           src="https://lottie.host/7585aec3-0a17-44d7-b5de-e8b3362475c9/nfciYs6ZCs.json"
           loop
           autoplay
@@ -38,7 +39,7 @@ const Hero = () => {
       </div>
       {/* 🟪 card 🟪 */}
       <div className="grid place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-4">
-        <div className="card h-[500px] px-4 w-96 shadow-xl border border-base-200 hover:bg-base-100 duration-200">
+        <div className="cardDesign card h-[500px] px-4 w-96 shadow-xl border border-base-200 hover:bg-base-100 duration-200">
           <figure>
             <img
               src="https://i.ibb.co.com/qYXgtVB/code-svgrepo-com.png"
@@ -55,7 +56,7 @@ const Hero = () => {
             </p>
           </div>
         </div>
-        <div className="card h-[500px] px-4 w-96 shadow-xl border border-base-200 hover:bg-base-100 duration-200">
+        <div className="cardDesign card h-[500px] px-4 w-96 shadow-xl border border-base-200 hover:bg-base-100 duration-200">
           <figure>
             <img
               src="https://i.ibb.co.com/THL5X0R/antigravity-technology-with-elements-min.png"
@@ -74,7 +75,7 @@ const Hero = () => {
             </p>
           </div>
         </div>
-        <div className="card h-[500px] px-4 w-96 shadow-xl border border-base-200 hover:bg-base-100 duration-200">
+        <div className="cardDesign card h-[500px] px-4 w-96 shadow-xl border border-base-200 hover:bg-base-100 duration-200">
           <figure>
             <img
               src="https://i.ibb.co.com/SntYJdH/rb-2148796510-min.png"
@@ -92,7 +93,10 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <a href="https://www.freepik.com/free-vector/antigravity-technology-with-elements_4082368.htm#fromView=search&page=1&position=8&uuid=ff047f2d-ef1a-4e78-be6f-15425b507482">
+      <a
+        className="bg-base-200 block w-full"
+        href="https://www.freepik.com/free-vector/antigravity-technology-with-elements_4082368.htm#fromView=search&page=1&position=8&uuid=ff047f2d-ef1a-4e78-be6f-15425b507482"
+      >
         Image by freepik
       </a>
     </>
